@@ -1,8 +1,10 @@
 package org.cdac.controllers;
 
-import org.cdac.models.ServiceVersion;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Collections;
+import java.util.Map;
 
 /**
  * Created by grohit on 9/13/2015.
@@ -12,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ServiceVersionController {
 
     @RequestMapping(value = "/rest")
-    public ServiceVersion version() {
-        return new ServiceVersion("1.0.0.0");
+    public Map<String, String> version() {
+        return Collections.singletonMap("version", "1.0.0.0");
     }
 
 }
